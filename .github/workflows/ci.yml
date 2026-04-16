@@ -17,7 +17,7 @@ jobs :
             python-version : "3.10" 
         - name : Install Depedencies
           run : |
-            if [-f requirements.txt];
+            if [-f requirements.txt]; then
               echo "files found"
               pip install -r requirements.txt
             else 
