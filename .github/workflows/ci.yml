@@ -20,7 +20,7 @@ jobs :
             if [-f requirements.txt]; then
               echo "files found"
               pip install -r requirements.txt
-            else if [-f jibran.txt];then
+            elif [-f jibran.txt];then
               echo "jirban.txt found" 
             else 
               echo "files not found"
