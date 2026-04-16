@@ -1,6 +1,7 @@
 name : MyCI
 on :
-  push : [main]
+  push :
+    branches : [main]
 
 
 jobs :
