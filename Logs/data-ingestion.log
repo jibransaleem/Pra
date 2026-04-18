@@ -1,0 +1,55 @@
+2026-04-18 12:20:15,013 | INFO | data-ingestor | data_ingestion.py:17 | Data is sucessfully injected from loc C:\Users\ADIL TRADERS\OneDrive\Desktop\folder\Pra\data\data.csv 
+ 
+
+2026-04-18 12:20:15,159 | INFO | data-ingestor | data_ingestion.py:32 | sucessfully saved x_train 
+
+2026-04-18 12:20:15,193 | INFO | data-ingestor | data_ingestion.py:32 | sucessfully saved x_test 
+
+2026-04-18 12:20:15,241 | INFO | data-ingestor | data_ingestion.py:32 | sucessfully saved y_train 
+
+2026-04-18 12:20:15,247 | INFO | data-ingestor | data_ingestion.py:32 | sucessfully saved y_test 
+
+2026-04-18 12:21:36,870 | INFO | data-ingestor | data_ingestion.py:17 | Data is sucessfully injected from loc C:\Users\ADIL TRADERS\OneDrive\Desktop\folder\Pra\data\data.csv 
+ 
+
+2026-04-18 12:21:36,982 | INFO | data-ingestor | data_ingestion.py:32 | sucessfully saved x_train.csv 
+
+2026-04-18 12:21:37,012 | INFO | data-ingestor | data_ingestion.py:32 | sucessfully saved x_test.csv 
+
+2026-04-18 12:21:37,140 | INFO | data-ingestor | data_ingestion.py:32 | sucessfully saved y_train.csv 
+
+2026-04-18 12:21:37,148 | INFO | data-ingestor | data_ingestion.py:32 | sucessfully saved y_test.csv 
+
+2026-04-18 12:24:29,957 | INFO | data-ingestor | data_ingestion.py:17 | Data is sucessfully injected from loc C:\Users\ADIL TRADERS\OneDrive\Desktop\folder\Pra\data\data.csv 
+ 
+
+2026-04-18 12:24:30,013 | INFO | data-ingestor | data_ingestion.py:32 | sucessfully saved x_train.csv 
+
+2026-04-18 12:24:30,115 | INFO | data-ingestor | data_ingestion.py:32 | sucessfully saved x_test.csv 
+
+2026-04-18 12:24:30,198 | INFO | data-ingestor | data_ingestion.py:32 | sucessfully saved y_train.csv 
+
+2026-04-18 12:24:30,209 | INFO | data-ingestor | data_ingestion.py:32 | sucessfully saved y_test.csv 
+
+2026-04-18 12:25:52,190 | INFO | data-ingestor | data_ingestion.py:17 | Data is sucessfully injected from loc C:\Users\ADIL TRADERS\OneDrive\Desktop\folder\Pra\data\data.csv 
+ 
+
+2026-04-18 12:25:52,231 | INFO | data-ingestor | data_ingestion.py:32 | sucessfully saved x_train.csv 
+
+2026-04-18 12:25:52,242 | INFO | data-ingestor | data_ingestion.py:32 | sucessfully saved x_test.csv 
+
+2026-04-18 12:25:52,247 | INFO | data-ingestor | data_ingestion.py:32 | sucessfully saved y_train.csv 
+
+2026-04-18 12:25:52,254 | INFO | data-ingestor | data_ingestion.py:32 | sucessfully saved y_test.csv 
+
+2026-04-18 13:33:59,446 | INFO | data-ingestor | data_ingestion.py:35 | Data is sucessfully injected from loc C:\Users\ADIL TRADERS\OneDrive\Desktop\folder\Pra\data\data.csv 
+ 
+
+2026-04-18 13:33:59,490 | INFO | data-ingestor | data_ingestion.py:50 | sucessfully saved x_train.csv 
+
+2026-04-18 13:33:59,500 | INFO | data-ingestor | data_ingestion.py:50 | sucessfully saved x_test.csv 
+
+2026-04-18 13:33:59,504 | INFO | data-ingestor | data_ingestion.py:50 | sucessfully saved y_train.csv 
+
+2026-04-18 13:33:59,515 | INFO | data-ingestor | data_ingestion.py:50 | sucessfully saved y_test.csv 
+

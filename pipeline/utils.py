@@ -17,8 +17,7 @@ class log:
         self.file_name = file_name
         self.logger_name = Logger_name
         self.formatter = logging.Formatter(
-    "%(asctime)s | %(levelname)s | %(name)s | %(filename)s:%(lineno)d | %(message)s"
-    )
+    "%(asctime)s | %(levelname)s | %(name)s | %(filename)s:%(lineno)d | %(message)s \n")
     def cli_(self):
         cli_handler = logging.StreamHandler()
         cli_handler.setFormatter(self.formatter)
@@ -35,8 +34,3 @@ class log:
         my_logger.addHandler(self.cli_())
         my_logger.addHandler(self.file_())
         return my_logger
-        
-logger = log(Logger_name="pre" ,file_name="pr").get_logger()
-
-file = Files()
-print(file.load_params())

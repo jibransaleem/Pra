@@ -1,0 +1,15 @@
+[project]
+name = "pra"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "dagshub>=0.7.0",
+    "mlflow>=1.27.0",
+    "pandas>=3.0.2",
+    "protobuf==3.20.3",
+    "pyyaml>=6.0.3",
+    "scikit-learn>=1.8.0",
+    "setuptools>=82.0.1",
+]
