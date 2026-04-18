@@ -1,32 +1,29 @@
-name : Que1 
+name : MYCI
 
 on :
-  push :
-    branches : [main]
+  push : 
+    branches: [main]
 
 jobs :
-    build :
-      runs-on:  "ubuntu-latest"
+  Build :
+    runs-on: "ubuntu-latest"
 
-      steps :
-        - name : CheckoutCode
-          uses : actions/checkout@v3
-        - name : BuildPython
-          uses : actions/setup-python@v4
-          with :
-            python-version : "3.10" 
-        - name : Install Depedencies
-          run : |
-            if [-f requirements.txt]; then
-              echo "files found"
-              pip install -r requirements.txt
-            elif [-f jibran.txt];then
-              echo "jirban.txt found" 
-            else 
-              echo "files not found"
-            fi 
-        - name : Greet
-          run : | 
-            echo "Hi"
-
-          
+    steps:
+      - name : Checkout
+        uses : actions/checkout@v3
+      - name : BuildPython
+        uses : actions/setup-python@v4
+        with :
+          python-version : "3.10"
+      - name : Install Dependecies
+        run : |
+          if [-f code.py] ;then
+            echo "fil found"
+          elif [-f jibran.txt]; then ;
+            echo "file founded"
+          else  
+              echo "not found"
+          fi 
+      - name : Greet 
+        run : |
+          echo "hi"
