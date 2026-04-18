@@ -1,0 +1,43 @@
+schema: '2.0'
+stages:
+  data_ingestion:
+    cmd: python pipeline/data_ingestion.py
+    deps:
+    - path: data/data.csv
+      hash: md5
+      md5: 35869aa45008618fc4aa9e873c86a595
+      size: 123547
+    - path: pipeline/data_ingestion.py
+      hash: md5
+      md5: 73e852028e2a7314bbd01330bf0ad720
+      size: 2331
+    params:
+      params.yaml:
+        split_ratio: 0.2
+    outs:
+    - path: data/SPLIT
+      hash: md5
+      md5: 2ee998fe8bfd5088a5af4e12260c050a.dir
+      size: 125197
+      nfiles: 4
+  model_training:
+    cmd: python pipeline/model.py
+    deps:
+    - path: data/SPLIT
+      hash: md5
+      md5: 2ee998fe8bfd5088a5af4e12260c050a.dir
+      size: 125197
+      nfiles: 4
+    - path: pipeline/model.py
+      hash: md5
+      md5: 0a77790094774f93ead6cf2dbaaada61
+      size: 1864
+    params:
+      params.yaml:
+        n_neighbors: 5
+    outs:
+    - path: artifacts/models
+      hash: md5
+      md5: e56bd37e60e84f26d4f3fe3df6b8d3c2.dir
+      size: 117819
+      nfiles: 1
