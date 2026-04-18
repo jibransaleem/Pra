@@ -19,7 +19,7 @@ jobs :
         run : |
           if [-f code.py] ;then
             echo "fil found"
-          elif [-f jibran.txt]; then ;
+          elif [-f jibran.txt]; then 
             echo "file founded"
           else  
               echo "not found"
