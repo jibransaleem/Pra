@@ -1,7 +1,7 @@
 import logging
 import os
 import yaml
-YML_PATH   = r"C:\Users\ADIL TRADERS\OneDrive\Desktop\folder\Pra\params.yml"
+YML_PATH   = r"C:\Users\ADIL TRADERS\OneDrive\Desktop\folder\Pra\params.yaml"
 
 class Files:
     def __init__(self):

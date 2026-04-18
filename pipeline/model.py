@@ -31,7 +31,7 @@ x_test  =  r"C:\Users\ADIL TRADERS\OneDrive\Desktop\folder\Pra\data\SPLIT\x_test
 y_test = r"C:\Users\ADIL TRADERS\OneDrive\Desktop\folder\Pra\data\SPLIT\y_test.csv"  
 with mlflow.start_run(run_name="model-train") as run :
     
-    n_neighbors =  Files().load_params()['Model']['n_neighbors']
+    n_neighbors =  Files().load_params()['n_neighbors']
     model = KNeighborsClassifier(n_neighbors=n_neighbors)
     xtr = pd.read_csv(x_train)
     ytr =  pd.read_csv(y_train).values.ravel()
@@ -44,4 +44,5 @@ with mlflow.start_run(run_name="model-train") as run :
     mlflow.log_metric("accuracy-score" , acc)
     mlflow.log_metric("f1-score", f1)
     mlflow.sklearn.log_model(sk_model=model , name="knn")
+    save_model(model , "knn.pkl")
     my_logger.info("Model trained sucessfully")

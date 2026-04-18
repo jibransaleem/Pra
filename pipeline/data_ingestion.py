@@ -50,7 +50,7 @@ class Split_data(Ingect_data):
         my_logger.info("sucessfully saved %s", name)
     def split_data(self):
         params =  Files().load_params()
-        test_size = params['data_ingestion']['split_ratio']
+        test_size = params['split_ratio']
         data = self.load_data()
         x_train , x_test , y_train , y_test = train_test_split(data.iloc[:,:-1],data.iloc[:,-1] , test_size=test_size , random_state=23)
         self.save_data(x_train , "x_train.csv")

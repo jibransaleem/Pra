@@ -1,0 +1,22 @@
+stages:
+  data_ingestion:
+    cmd: python pipeline/data_ingestion.py
+    params:
+      - params.yaml:
+          - split_ratio
+    deps:
+      - pipeline/data_ingestion.py
+      - data/data.csv
+    outs:
+      - data/SPLIT
+
+  model_training:
+    cmd: python pipeline/model.py
+    params:
+      - params.yaml:
+          - n_neighbors
+    deps:
+      - data/SPLIT
+      - pipeline/model.py
+    outs:
+      - artifacts/models

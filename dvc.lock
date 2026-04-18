@@ -30,14 +30,14 @@ stages:
       nfiles: 4
     - path: pipeline/model.py
       hash: md5
-      md5: 0a77790094774f93ead6cf2dbaaada61
-      size: 1864
+      md5: a4ed4c9e4bc66a576c6d1c0e01bf5c74
+      size: 1868
     params:
       params.yaml:
         n_neighbors: 5
     outs:
     - path: artifacts/models
       hash: md5
-      md5: e56bd37e60e84f26d4f3fe3df6b8d3c2.dir
+      md5: 5304c9b511a7224e6e529e63066bd7f5.dir
       size: 117819
       nfiles: 1
