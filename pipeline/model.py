@@ -46,3 +46,4 @@ with mlflow.start_run(run_name="model-train") as run :
     mlflow.sklearn.log_model(sk_model=model , name="knn")
     save_model(model , "knn.pkl")
     my_logger.info("Model trained sucessfully")
+    

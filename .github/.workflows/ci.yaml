@@ -28,4 +28,6 @@ jobs:
       - name : RunPipeline
         run : | 
           dvc repro
-      
+      - name : Sucess
+        run : |
+          echo "PIPELINE SUCESS FULLY RUN"
