@@ -19,15 +19,16 @@ jobs:
 
       - name: Install Dependencies
         run: |
+          pip install --upgrade pip
           if [ -f requirements.txt ]; then
             pip install -r requirements.txt
           else
-            echo "requirements.txt not found"
-            exit 0
+            echo "No requirements.txt found"
           fi
-      - name : RunPipeline
-        run : | 
-          dvc repro
-      - name : Sucess
-        run : |
-          echo "PIPELINE SUCESS FULLY RUN"
+          pip install dvc
+
+      - name: Run Pipeline
+        run: dvc repro
+
+      - name: Success
+        run: echo "PIPELINE SUCCESSFULLY RUN"
