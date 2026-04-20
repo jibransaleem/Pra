@@ -13,11 +13,11 @@ stages:
       size: 2331
     params:
       params.yaml:
-        split_ratio: 0.2
+        split_ratio: 0.4
     outs:
     - path: data/SPLIT
       hash: md5
-      md5: 2ee998fe8bfd5088a5af4e12260c050a.dir
+      md5: 3d8044eeed6a6390b119a0ddb433669a.dir
       size: 125197
       nfiles: 4
   model_training:
@@ -25,7 +25,7 @@ stages:
     deps:
     - path: data/SPLIT
       hash: md5
-      md5: 2ee998fe8bfd5088a5af4e12260c050a.dir
+      md5: 3d8044eeed6a6390b119a0ddb433669a.dir
       size: 125197
       nfiles: 4
     - path: pipeline/model.py
@@ -34,10 +34,10 @@ stages:
       size: 1874
     params:
       params.yaml:
-        n_neighbors: 6
+        n_neighbors: 7
     outs:
     - path: artifacts/models
       hash: md5
-      md5: b715666ca2ad08c6b92275cfab8c6e3b.dir
-      size: 117819
+      md5: eb5b54dabd16ac597e1b22ff55786bfe.dir
+      size: 88635
       nfiles: 1
