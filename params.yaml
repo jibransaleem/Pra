@@ -1,2 +1,2 @@
-split_ratio: 0.2
-n_neighbors: 5
+split_ratio: 0.3
+n_neighbors: 6
