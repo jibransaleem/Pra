@@ -5,11 +5,6 @@ from sklearn.model_selection import train_test_split
 import mlflow
 import dagshub
 
-dagshub.init(
-    repo_owner="saleemjibran813",
-    repo_name="Pra",
-    mlflow=True
-)
 
 mlflow.set_tracking_uri(
     "https://dagshub.com/saleemjibran813/Pra.mlflow"
