@@ -1,3 +1,21 @@
-.venv
-data
-artifacts
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.venv/
+env/
+
+# Logs
+*.log
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# DVC cache (DO NOT COMMIT THIS)
+.dvc/cache/
+
+# Ignore data files BUT keep DVC tracking files
+data/*
+!data/*.dvc
