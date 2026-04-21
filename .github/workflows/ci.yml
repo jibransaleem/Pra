@@ -48,7 +48,7 @@ jobs:
           aws configure set region $AWS_DEFAULT_REGION
 
       - name: Pull data from S3
-        run: dvc pull -v
+        run: dvc pull -v --force
 
       # 🔥 ADD THIS DEBUG STEP
       - name: Check files after pull
