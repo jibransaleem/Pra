@@ -7,7 +7,7 @@ import pickle
 import dagshub
 from utils import log , Files
 my_logger = log(Logger_name="Model" , file_name="model").get_logger()
-dagshub.init(repo_owner='saleemjibran813', repo_name='Pra', mlflow=True)
+# dagshub.init(repo_owner='saleemjibran813', repo_name='Pra', mlflow=True)
 mlflow.set_tracking_uri(
     "https://dagshub.com/saleemjibran813/Pra.mlflow"
 )
