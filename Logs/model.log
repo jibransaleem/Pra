@@ -18,3 +18,15 @@
 
 2026-04-21 01:20:30,819 | INFO | Model | model.py:48 | Model trained sucessfully 
 
+2026-04-21 22:05:27,745 | INFO | Model | model.py:21 | model is saved 
+
+2026-04-21 22:05:27,748 | INFO | Model | model.py:43 | Model trained sucessfully 
+
+2026-04-21 22:08:00,298 | INFO | Model | model.py:21 | model is saved 
+
+2026-04-21 22:08:00,305 | INFO | Model | model.py:43 | Model trained sucessfully 
+
+2026-04-21 22:09:10,845 | INFO | Model | model.py:21 | model is saved 
+
+2026-04-21 22:09:10,847 | INFO | Model | model.py:43 | Model trained sucessfully 
+
