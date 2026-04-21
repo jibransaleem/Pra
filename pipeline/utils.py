@@ -1,8 +1,17 @@
 import logging
 import os
 import yaml
-YML_PATH   = r"C:\Users\ADIL TRADERS\OneDrive\Desktop\folder\Pra\params.yaml"
+# YML_PATH   = r"C:\Users\ADIL TRADERS\OneDrive\Desktop\folder\Pra\params.yaml"
+import os
 
+# Instead of a hardcoded absolute path like:
+# file_path = r"C:\Users\ADIL TRADERS\OneDrive\Desktop\folder\Pra\Logs/data-ingestion.log"
+
+# Use this:
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+LOG_DIR = os.path.join(BASE_DIR, "Logs")
+os.makedirs(LOG_DIR, exist_ok=True)
+YML_PATH = os.path.join(LOG_DIR, "data-ingestion.log")
 class Files:
     def __init__(self):
         pass
