@@ -19,3 +19,8 @@ Thumbs.db
 # Ignore data files BUT keep DVC tracking files
 data/*
 !data/*.dvc
+
+# 🔥 ADD THIS FOR ARTIFACTS
+artifacts/*
+!artifacts/*.dvc
+!artifacts/**/*.dvc
