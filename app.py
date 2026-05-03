@@ -16,7 +16,7 @@ COLUMNS = [
     "mean fractal dimension","radius error","texture error","perimeter error",
     "area error","smoothnEss error","compactness error","concavity error",
     "concave points error","symmetry error","fractal dimension error",
-    "worst radius","worst texture","worst perimeter","worst area","worst smoothness",
+    "worst radius","worst Texture","worst perimeter","worst area","worst smoothness",
     "worst compactness","worst concavity","worst concave points","worst symmetry",
     "worst fractal dimension"
 ]

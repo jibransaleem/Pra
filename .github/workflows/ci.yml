@@ -6,11 +6,19 @@ name: ML-CI
 on:
   push:
     branches: [main]
-
+    paths:
+      - "requirements.txt"
+      - "Dockerfile"
+      - ".github/workflows/ml-ci.yml"
 
   pull_request:
     branches: [main]
+    paths:
+      - "requirements.txt"
+      - "Dockerfile"
+      - ".github/workflows/ml-ci.yml"
 
+  workflow_dispatch:
 
 jobs:
 
@@ -133,14 +141,17 @@ jobs:
           key: ${{ secrets.EC2_SSH_KEY }}
           script: |
 
+            # ── Resolve variables on EC2 side ──
+            IMAGE_TAG=${{ github.sha }}
+            ECR_REGISTRY=${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.${{ secrets.AWS_REGION }}.amazonaws.com
+            ECR_REPO=${{ secrets.ECR_REPO_NAME }}
+
             # ── Authenticate EC2 with ECR ──
             sudo aws ecr get-login-password --region ${{ secrets.AWS_REGION }} \
-              | sudo docker login --username AWS --password-stdin \
-                ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.${{ secrets.AWS_REGION }}.amazonaws.com
+              | sudo docker login --username AWS --password-stdin $ECR_REGISTRY
 
             # ── Pull the latest image ──
-            sudo docker pull \
-              ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.${{ secrets.AWS_REGION }}.amazonaws.com/${{ secrets.ECR_REPO_NAME }}:${{ github.sha }}
+            sudo docker pull $ECR_REGISTRY/$ECR_REPO:$IMAGE_TAG
 
             # ── Stop & remove old container if running ──
             sudo docker stop ml-app 2>/dev/null || true
@@ -154,8 +165,8 @@ jobs:
               -e MLFLOW_TRACKING_URI=https://dagshub.com/${{ secrets.DAGSHUB_USERNAME }}/Pra.mlflow \
               -e MLFLOW_TRACKING_USERNAME=${{ secrets.DAGSHUB_USERNAME }} \
               -e MLFLOW_TRACKING_PASSWORD=${{ secrets.DAGSHUB_TOKEN }} \
-              ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.${{ secrets.AWS_REGION }}.amazonaws.com/${{ secrets.ECR_REPO_NAME }}:${{ github.sha }}
+              $ECR_REGISTRY/$ECR_REPO:$IMAGE_TAG
 
             # ── Verify container is running ──
             sudo docker ps | grep ml-app
-            echo "DEPLOYMENT COMPLETE — app live on port 80"
+            echo "DEPLOYMENT COMPLETE — app live on port 8000"
