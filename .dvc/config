@@ -1,4 +1,4 @@
 [core]
     remote = myremote
 ['remote "myremote"']
-    url = s3://jibrankibucket12321
+    url = s3://mybuckedthis12
