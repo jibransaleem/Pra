@@ -6,29 +6,11 @@ name: ML-CI
 on:
   push:
     branches: [main]
-    paths:
-      - "src/**"
-      - "*.dvc"
-      - "dvc.yaml"
-      - "dvc.lock"
-      - "params.yaml"
-      - "requirements.txt"
-      - "Dockerfile"
-      - ".github/workflows/ml-ci.yml"
+
 
   pull_request:
     branches: [main]
-    paths:
-      - "src/**"
-      - "*.dvc"
-      - "dvc.yaml"
-      - "dvc.lock"
-      - "params.yaml"
-      - "requirements.txt"
-      - "Dockerfile"
-      - ".github/workflows/ml-ci.yml"
 
-  workflow_dispatch:
 
 jobs:
 
