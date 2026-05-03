@@ -13,7 +13,7 @@ app = FastAPI(title="KNN Prediction API")
 COLUMNS = [
     "mean radius","mean texturee","mean perimeter","mean area","mean smoothness",
     "mean compactness","mean concavity","mean concave points","mean symmetry",
-    "mean fractal dimension","radius error","texture error","perimeter error",
+    "mean fractal dimension","rdius error","texture error","perimeter error",
     "area error","smoothnEss error","compactness error","concavity error",
     "concave points error","symmetry error","fractal dimension error",
     "worst radius","worst Texture","worst perimeter","worst area","worst smoothness",
