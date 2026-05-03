@@ -6,17 +6,8 @@ name: ML-CI
 on:
   push:
     branches: [main]
-    paths:
-      - "requirements.txt"
-      - "Dockerfile"
-      - ".github/workflows/ml-ci.yml"
-
   pull_request:
     branches: [main]
-    paths:
-      - "requirements.txt"
-      - "Dockerfile"
-      - ".github/workflows/ml-ci.yml"
 
   workflow_dispatch:
 
