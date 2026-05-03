@@ -132,24 +132,24 @@ jobs:
           key: ${{ secrets.EC2_SSH_KEY }}
           script: |
 
-            # ── Resolve variables on EC2 side ──
-            IMAGE_TAG=${{ github.sha }}
+            # ── Variables (use runtime-safe values) ──
             ECR_REGISTRY=${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.${{ secrets.AWS_REGION }}.amazonaws.com
             ECR_REPO=${{ secrets.ECR_REPO_NAME }}
+            IMAGE_TAG=${{ github.sha }}
 
-            # ── Authenticate EC2 with ECR ──
-            sudo aws ecr get-login-password --region ${{ secrets.AWS_REGION }} \
-              | sudo docker login --username AWS --password-stdin $ECR_REGISTRY
+            # ── Login to ECR (IAM role handles credentials) ──
+            aws ecr get-login-password --region ${{ secrets.AWS_REGION }} \
+              | docker login --username AWS --password-stdin $ECR_REGISTRY
 
-            # ── Pull the latest image ──
-            sudo docker pull $ECR_REGISTRY/$ECR_REPO:$IMAGE_TAG
+            # ── Pull latest image ──
+            docker pull $ECR_REGISTRY/$ECR_REPO:$IMAGE_TAG
 
-            # ── Stop & remove old container if running ──
-            sudo docker stop ml-app 2>/dev/null || true
-            sudo docker rm   ml-app 2>/dev/null || true
+            # ── Stop old container ──
+            docker stop ml-app || true
+            docker rm   ml-app || true
 
             # ── Run new container ──
-            sudo docker run -d \
+            docker run -d \
               --name ml-app \
               --restart unless-stopped \
               -p 80:8000 \
@@ -158,6 +158,6 @@ jobs:
               -e MLFLOW_TRACKING_PASSWORD=${{ secrets.DAGSHUB_TOKEN }} \
               $ECR_REGISTRY/$ECR_REPO:$IMAGE_TAG
 
-            # ── Verify container is running ──
-            sudo docker ps | grep ml-app
-            echo "DEPLOYMENT COMPLETE — app live on port 8000"
+            # ── Verify ──
+            docker ps | grep ml-app
+            echo "DEPLOYMENT COMPLETE"
